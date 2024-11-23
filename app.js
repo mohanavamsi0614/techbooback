@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
+const cors=require("cors")
 
 // Middleware to parse JSON request body
 app.use(express.json());
+app.use(cors())
 
-// Define Mongoose schema and model
 const schema = new mongoose.Schema({
     name: String,
     email: String,
